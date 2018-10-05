@@ -8,3 +8,10 @@ def productView(request):
         "objects_all" : obj,
     }
     return render(request,"products/product_list.html",context)
+
+def ProductDetailView(request,id):
+    obj = Product.objects.get(id=id)
+    context ={
+        "object" : obj,
+    }
+    return render(request,"products/Product_detail_view.html",context)
