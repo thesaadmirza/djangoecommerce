@@ -16,8 +16,8 @@ class productlistview(generic.ListView):
     def get_queryset(self):
         return Product.objects.all()
 
-def ProductDetailView(request,id):
-    obj = Product.objects.get(id=id)
+def ProductDetailView(request,slug):
+    obj = Product.objects.get(slug=slug)
     context ={
         "object" : obj,
     }
