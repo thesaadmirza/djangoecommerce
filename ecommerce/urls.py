@@ -8,12 +8,13 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',homePage),
-    path('login/',LoginPage),
-    path('register/',RegisterPage),
-    path('contactPage/',contactPage),
-    path('aboutPage/',aboutPage),
-    path('products/',include('products.urls')),
+    path('',homePage,name='home'),
+    path('login/',LoginPage,name='login'),
+    path('register/',RegisterPage,name='register'),
+    path('contactPage/',contactPage,name='contact'),
+    path('aboutPage/',aboutPage,name='about'),
+    path('products/',include(('products.urls','products'),namespace='products')),
+    path('search/',include(('search.urls','search'),namespace='search')),
    
 ]
 
